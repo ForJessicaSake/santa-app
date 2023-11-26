@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { FcGoogle } from "react-icons/fc";
 import Button from "@/components/Micro/Button";
-
+import { FaMicrosoft, FaApple } from "react-icons/fa6";
 const index = () => {
   const router = useRouter();
 
@@ -16,19 +17,19 @@ const index = () => {
 
         <Button className="flex items-center">
           <span>
-            <Image src="login.svg" alt="paws" width={40} height={40} />
+            <FcGoogle />
           </span>
           Continue with Google
         </Button>
         <Button className="flex items-center">
           <span>
-            <Image src="santa.svg" alt="paws" width={40} height={40} />
+            <FaMicrosoft />{" "}
           </span>
           Continue with Microsoft
         </Button>
-        <Button className="flex items-center">
+        <Button className="flex items-center space-x-2">
           <span>
-            <Image src="santa.svg" alt="paws" width={40} height={40} />
+            <FaApple />{" "}
           </span>
           Continue with Apple
         </Button>
