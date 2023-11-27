@@ -27,37 +27,41 @@ const useChat = () => {
         messages: [] as OpenAI.Chat.Completions.ChatCompletionMessageParam[],
     });
 
-    const send = React.useCallback(async () => {
-        const message: OpenAI.Chat.Completions.ChatCompletionMessageParam = {
-            content: prompt,
-            role: "user",
-        };
-        setData((prev) => ({
-            messages: [...prev.messages, message],
-            loading: true,
-            prompt: "",
-            error: false,
-        }));
-        try {
-            // scrollToBottom();
-            const completion = await openai.chat.completions.create({
-                messages: [
-                    { content: SYSTEM_PROMPT, role: "system" },
-                    ...messages.filter(
-                        (msg) => msg.content !== message.content
-                    ),
-                    message,
-                ],
-                model: "gpt-3.5-turbo",
-            });
+    const send = React.useCallback(
+        async (msg?: string) => {
+            const message: OpenAI.Chat.Completions.ChatCompletionMessageParam =
+                {
+                    content: prompt || msg || "",
+                    role: "user",
+                };
             setData((prev) => ({
-                messages: [...prev.messages, completion.choices[0].message],
-                loading: false,
+                messages: [...prev.messages, message],
+                loading: true,
+                prompt: "",
+                error: false,
             }));
-        } catch (error) {
-            setData({ loading: false, error: true });
-        }
-    }, [prompt, messages]);
+            try {
+                // scrollToBottom();
+                const completion = await openai.chat.completions.create({
+                    messages: [
+                        { content: SYSTEM_PROMPT, role: "system" },
+                        ...messages.filter(
+                            (msg) => msg.content !== message.content
+                        ),
+                        message,
+                    ],
+                    model: "gpt-3.5-turbo",
+                });
+                setData((prev) => ({
+                    messages: [...prev.messages, completion.choices[0].message],
+                    loading: false,
+                }));
+            } catch (error) {
+                setData({ loading: false, error: true });
+            }
+        },
+        [prompt, messages]
+    );
 
     React.useEffect(() => {
         scrollToBottom();
