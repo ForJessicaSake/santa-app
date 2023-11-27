@@ -6,7 +6,7 @@ const index = () => {
   const router = useRouter();
   return (
     <main className="bg-[url('/GetStarted.svg')] bg-cover">
-      <div className="flex min-h-screen items-center justify-center p-2">
+      <div className="flex min-h-screen items-center justify-center p-2 container mx-auto">
         <div className="flex flex-col justify-center items-center space-y-5 bg-[#293A47] max-w-sm min-h-[370px] rounded-[133px] h-full w-full p-5">
           <div className="flex items-center space-x-3">
             <Image src="/Group 2.svg" alt="paws" width={50} height={50} />
@@ -23,7 +23,8 @@ const index = () => {
             </span>
             LOGIN
           </Button>
-          <Button className="flex items-center justify-center w-full sm:text-xl">
+          <Button className="flex items-center justify-center w-full sm:text-xl"
+            onClick={() => router.push("/sign-up")}>
             <span>
               <Image src="santa.svg" alt="paws" width={40} height={40} />
             </span>

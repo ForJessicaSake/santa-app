@@ -8,7 +8,7 @@ const index = () => {
 
   return (
     <main className="bg-[url('/GetStarted.svg')] bg-cover">
-      <div className="flex min-h-screen items-center justify-center p-2">
+      <div className="flex min-h-screen items-center justify-center p-2 container mx-auto">
       <div className="flex flex-col justify-center items-center space-y-5 bg-[#293A47] max-w-sm min-h-[480px] rounded-[133px] h-full w-full p-5">
           <div className="flex items-center space-x-5">
             <Image src="/Group 2.svg" alt="paws" width={50} height={50} />
