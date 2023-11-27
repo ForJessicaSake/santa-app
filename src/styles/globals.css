@@ -7,4 +7,36 @@
     src: url("/public/fonts/roddey.ttf") format("truetype");
     font-weight: bold;
     font-style: normal;
-  }
+}
+
+/* For Webkit browsers (Chrome, Safari, etc.) */
+*::-webkit-scrollbar {
+    width: 12px; /* width of the scrollbar */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ff000050; /* color of the thumb */
+    border-radius: 6px; /* rounded corners of the thumb */
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent; /* color of the track */
+}
+
+/* For Firefox */
+/* Note: Firefox supports a limited set of scrollbar styling */
+/* These styles may not work in all versions of Firefox */
+/* scrollbar-color: #4CAF50 #f1f1f1;
+scrollbar-width: thin; */
+
+/* For Internet Explorer 10+ */
+/* Note: Internet Explorer supports a limited set of scrollbar styling */
+/* These styles may not work in all versions of Internet Explorer */
+/* -ms-overflow-style: none;
+scrollbar-face-color: #4CAF50;
+scrollbar-shadow-color: #f1f1f1;
+scrollbar-highlight-color: #f1f1f1;
+scrollbar-3dlight-color: #f1f1f1;
+scrollbar-darkshadow-color: #4CAF50;
+scrollbar-track-color: #f1f1f1;
+scrollbar-arrow-color: #4CAF50; */
