@@ -131,7 +131,7 @@ const Chat = () => {
 
                             <div className="grid grid-cols-2 gap-5">
                                 {prompts.map((p, i) => (
-                                    <Button onClick={() => send(p)}>{p}</Button>
+                                    <Button onClick={() => send(p)} key={i}>{p}</Button>
                                 ))}
                             </div>
                         </div>
@@ -151,7 +151,6 @@ const Chat = () => {
                         <Button
                             disabled={loading}
                             onClick={() => send()}
-                            // className="absolute bg-blue-500 p-4 text-white bg-opacity-50 hover:bg-opacity-100 rounded-full right-5 top-1/2 -translate-y-1/2"
                             className="rounded-full absolute right-5 top-1/2 -translate-y-1/2 w-16"
                         >
                             <MdSend />
