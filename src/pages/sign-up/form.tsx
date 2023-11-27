@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import Image from "next/image";
 
-const form = () => {
+const Form = () => {
   const [isLoading, setIsLoading] = React.useState({
     emailAuth: false,
   });
@@ -96,4 +96,4 @@ const form = () => {
   );
 };
 
-export default form;
+export default Form;

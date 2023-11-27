@@ -102,7 +102,7 @@ const Chat = () => {
 
             <div className="grid grid-cols-2 gap-5">
               <Button>Hello Santa! Am I on the Nice List?</Button>
-              <Button>SANTA, what's Your Favourite Cookie?</Button>
+              <Button>SANTA, what is Your Favourite Cookie?</Button>
               <Button>
                 How Do You Deliver Presents to Everyone in One Night?
               </Button>
