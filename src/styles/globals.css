@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Itim&family=Mogra&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 
+@font-face {
+  font-family: "RonneySans";
+  src: url("/public//fonts/ronney.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /* For Webkit browsers (Chrome, Safari, etc.) */
 *::-webkit-scrollbar {

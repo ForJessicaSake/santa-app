@@ -11,7 +11,7 @@ const Button = ({
             {...props}
         >
             <span className="inline-block  border-[8px] border-black/40 w-full rounded-full ">
-                <span className="rounded-full flex items-center gap-x-2 justify-center border-b-[3px] border-white/30 w-full p-2 min-h-[50px]">
+                <span className="rounded-full flex items-center gap-x-2 justify-center border-b-[3px] border-white/30 w-full p-2 min-h-[45px] font-bold">
                     {children}
                 </span>
             </span>
