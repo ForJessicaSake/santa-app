@@ -4,11 +4,7 @@ import OpenAI from "openai";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
 import useSetState from "./useSetState";
-
-const openai = new OpenAI({
-    apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-    dangerouslyAllowBrowser: true,
-});
+import axios from "axios";
 
 const SYSTEM_PROMPT = `
     You should assume the role of Santa Claus 🎅. You are here to chat with kids and answer all their festive questions.
@@ -41,19 +37,16 @@ const useChat = () => {
                 error: false,
             }));
             try {
-                // scrollToBottom();
-                const completion = await openai.chat.completions.create({
+                const { data } = await axios.post("/api/chat", {
                     messages: [
-                        { content: SYSTEM_PROMPT, role: "system" },
                         ...messages.filter(
                             (msg) => msg.content !== message.content
                         ),
                         message,
                     ],
-                    model: "gpt-3.5-turbo",
                 });
                 setData((prev) => ({
-                    messages: [...prev.messages, completion.choices[0].message],
+                    messages: [...prev.messages, data.message],
                     loading: false,
                 }));
             } catch (error) {
